@@ -9,9 +9,62 @@
     <link rel="stylesheet" href="css/all.css" type="text/css">
     <title>TicTacToe</title>
   </head>
-  <body>
-    
+  <body class="bg-dark">
+    <nav class="text-center navbar-expand-lg bg-info">
+      <em class="text-white navbar-brand">Tic Tac Toe</em>
+    </nav>
+    <section class="first-page">
+      <div class="m-3 d-flex justify-content-between align-items-center pt-4">
+        <div>
+          <p class="text-white text-monospace text-center">Player 1</p>
+          <select class="custom-select select-btn-1">
+            <option selected value="1">Human</option>
+            <option value="2">Computer</option>
+          </select>
+        </div>
+        <p class="text-white versus text-monospace mt-5">Vs</p>
+        <div>
+          <p class="text-white text-monospace text-center">Player 2</p>
+          <select class="custom-select select-btn-2">
+            <option selected value="1">Human</option>
+            <option value="2">Computer</option>
+          </select>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <button class="btn btn-info mt-4 start-game">Start Game</button>
+      </div>
+    </section>
+
+    <section class="second-page">
+      <div class="m-3 d-flex justify-content-between align-items-center pt-4">
+      <div>
+        <p class="text-white text-monospace player-one"></p>
+        <p class="text-success text-center tag">X</p>
+      </div>
+      <p class="text-white versus text-monospace">Vs</p>
+      <div>
+        <p class="text-white text-monospace player-two"></p>
+        <p class="text-primary text-center tag">O</p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-2">
+      <button class="btn btn-success">Restart</button>
+    </div>
+    <p class="current-player text-white text-center mt-3 text-monospace"></p>
+    <div class="board m-5 mt-3 shadow-lg">
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+      <button class="bg-white tag-btn"></button>
+    </div>
+    </section>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
   </body>
 </html>

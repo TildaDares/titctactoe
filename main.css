@@ -1,0 +1,38 @@
+.navbar-brand {
+    font-size: 1.7rem;
+}
+
+.versus {
+    font-size: 1.3rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-content: center;
+    align-items: center;
+}
+
+.board button {
+    height: 100px;
+    font-size: 2.3rem;
+    border: 1px solid #343a40;
+    font-family: cursive;
+}
+
+.human-btn-1,
+.human-btn-2 {
+    width: 96px;
+}
+
+.second-page {
+    display: none;
+}
+
+.current-player {
+    font-size: 1.5rem;
+}
+
+.tag {
+    font-size: 1.4rem;
+}

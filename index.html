@@ -37,32 +37,33 @@
     </section>
 
     <section class="second-page">
-      <div class="m-3 d-flex justify-content-between align-items-center pt-4">
-      <div>
-        <p class="text-white text-monospace player-one"></p>
-        <p class="text-success text-center tag">X</p>
+      <div class="mt-3 mr-3 ml-3 d-flex justify-content-between align-items-center pt-4">
+        <div>
+          <p class="text-white text-monospace player-one"></p>
+          <p class="text-success text-center tag">X</p>
+        </div>
+        <p class="text-white versus text-monospace">Vs</p>
+        <div>
+          <p class="text-white text-monospace player-two"></p>
+          <p class="text-primary text-center tag">O</p>
+        </div>
       </div>
-      <p class="text-white versus text-monospace">Vs</p>
-      <div>
-        <p class="text-white text-monospace player-two"></p>
-        <p class="text-primary text-center tag">O</p>
+      <div class="d-flex justify-content-around align-items-center mt-2">
+        <button class="btn btn-info home">Home</button>
+        <button class="btn btn-success restart">Restart</button>
       </div>
-    </div>
-    <div class="d-flex justify-content-center align-items-center mt-2">
-      <button class="btn btn-success">Restart</button>
-    </div>
-    <p class="current-player text-white text-center mt-3 text-monospace"></p>
-    <div class="board m-5 mt-3 shadow-lg">
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-      <button class="bg-white tag-btn"></button>
-    </div>
+      <p class="current-player text-white text-center mt-3 text-monospace"></p>
+      <div class="board m-5 mt-3 shadow-lg">
+        <button class="bg-white tag-btn" data-id="0"></button>
+        <button class="bg-white tag-btn" data-id="1"></button>
+        <button class="bg-white tag-btn" data-id="2"></button>
+        <button class="bg-white tag-btn" data-id="3"></button>
+        <button class="bg-white tag-btn" data-id="4"></button>
+        <button class="bg-white tag-btn" data-id="5"></button>
+        <button class="bg-white tag-btn" data-id="6"></button>
+        <button class="bg-white tag-btn" data-id="7"></button>
+        <button class="bg-white tag-btn" data-id="8"></button>
+      </div>
     </section>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="script.js"></script>

@@ -2,69 +2,6 @@ const Player = (name, tag, type) => {
     return { name, tag, type };
 }
 
-const Computer = (name, tag, type) => {
-    const otherPlayer = tag === 'X' ? 'O' : 'X';
-    const nextMove = () => {
-        let move;
-        let bestScore = -Infinity;
-        board = gameFactory.gameArray;
-        for (let i = 0; i < board.length; i++) {
-            if (board[i] === '') {
-                board[i] = tag;
-                let score = minimax(board, 0, true);
-                // console.log(score)
-                board[i] = '';
-                if (score > bestScore) {
-                    move = i;
-                    bestScore = score;
-                }
-            }
-        }
-        console.log(move)
-        button = document.querySelector(`[data-id="${move}"]`);
-        console.log(button)
-        button.click();
-        return button;
-    };
-
-    const minimax = (board, depth, isMaximizing) => {
-        gameOutcome = gameFactory.gameWinner();
-        if (gameOutcome !== null) {
-            if (gameOutcome.tag === tag) {
-                return 1;
-            } else if (gameOutcome === 'tie') {
-                return 0;
-            } else {
-                return -1;
-            }
-        }
-
-        if (isMaximizing) {
-            let bestScore = -1;
-            for (let i = 0; i < board.length; i++) {
-                if (board[i] === '') {
-                    board[i] = tag;
-                    let score = minimax(board, depth + 1, false);
-                    board[i] = '';
-                    bestScore = Math.max(score, bestScore)
-                }
-            }
-            return bestScore;
-        } else {
-            let bestScore = 1;
-            for (let i = 0; i < board.length; i++) {
-                if (board[i] === '') {
-                    board[i] = otherPlayer;
-                    let score = minimax(board, depth + 1, true);
-                    board[i] = '';
-                    bestScore = Math.min(score, bestScore)
-                }
-            }
-            return bestScore;
-        }
-    }
-    return { name, tag, type, nextMove }
-}
 const gameFactory = (() => {
     let playerOne, playerTwo, currentPlayer;
     let count = 0;
@@ -73,7 +10,6 @@ const gameFactory = (() => {
     let currentPlayerTxt = document.querySelector('.current-player');
 
     const gameInit = () => {
-        console.log('yo')
         let startGameBtn = document.querySelector('.start-game');
         let homeBtn = document.querySelector('.home');
         let restartBtn = document.querySelector('.restart');
@@ -86,28 +22,17 @@ const gameFactory = (() => {
     };
 
     const getPlayerNames = () => {
-        let selectBtnOne = document.querySelector('.select-btn-1');
-        let selectBtnTwo = document.querySelector('.select-btn-2');
-        if (selectBtnOne.value == 1) {
-            let name = prompt("Enter player one's name");
-            playerOne = Player(name || 'player one', 'X', 'human');
-        } else {
-            playerOne = Computer('computer one', 'X', 'computer');
-        }
+        let name = prompt("Enter player one's name");
+        playerOne = Player(name || 'player one', 'X', 'human');
         currentPlayer = playerOne;
 
-        if (selectBtnTwo.value == 1) {
-            let name = prompt("Enter player two's name");
-            playerTwo = Player(name || 'player two', 'O', 'human');
-        } else {
-            playerTwo = Computer('computer two', 'O', 'computer');
-        }
+        name = prompt("Enter player two's name");
+        playerTwo = Player(name || 'player two', 'O', 'human');
         document.querySelector('.first-page').style.display = 'none';
         document.querySelector('.second-page').style.display = 'block';
         document.querySelector('.player-one').textContent = playerOne.name;
         document.querySelector('.player-two').textContent = playerTwo.name;
         currentPlayerTxt.textContent = `${currentPlayer.name}'s turn`;
-        compPlayer();
     };
 
     const playerTurn = e => {
@@ -130,13 +55,6 @@ const gameFactory = (() => {
             currentPlayerTxt.classList.add('text-success');
             currentPlayerTxt.textContent = `${currentPlayer.name} wins!!`;
             return;
-        }
-        compPlayer();
-    };
-
-    const compPlayer = () => {
-        if (currentPlayer.type === 'computer') {
-            currentPlayer.nextMove();
         }
     };
 
@@ -197,7 +115,7 @@ const gameFactory = (() => {
         elem.removeEventListener('click', playerTurn);
     };
 
-    return { gameInit, gameArray, gameWinner };
+    return { gameInit };
 })();
 
 gameFactory.gameInit();

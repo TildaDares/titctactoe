@@ -8,7 +8,7 @@
 
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, minmax(100px, 150px));
     justify-content: center;
     align-items: center;
 }
@@ -35,4 +35,8 @@
 
 .tag {
     font-size: 1.4rem;
+}
+
+.container {
+    max-width: 800px;
 }

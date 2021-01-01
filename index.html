@@ -13,22 +13,16 @@
     <nav class="text-center navbar-expand-lg bg-info">
       <em class="text-white navbar-brand">Tic Tac Toe</em>
     </nav>
-    <section class="first-page">
+    <section class="first-page container">
       <div class="m-3 d-flex justify-content-between align-items-center pt-4">
         <div>
           <p class="text-white text-monospace text-center">Player 1</p>
-          <select class="custom-select select-btn-1">
-            <option selected value="1">Human</option>
-            <option value="2">Computer</option>
-          </select>
+          <button class="btn btn-light">Human</button>
         </div>
         <p class="text-white versus text-monospace mt-5">Vs</p>
         <div>
           <p class="text-white text-monospace text-center">Player 2</p>
-          <select class="custom-select select-btn-2">
-            <option selected value="1">Human</option>
-            <option value="2">Computer</option>
-          </select>
+          <button class="btn btn-light">Human</button>
         </div>
       </div>
       <div class="d-flex justify-content-center align-items-center mt-5">
@@ -36,7 +30,7 @@
       </div>
     </section>
 
-    <section class="second-page">
+    <section class="second-page container">
       <div class="mt-3 mr-3 ml-3 d-flex justify-content-between align-items-center pt-4">
         <div>
           <p class="text-white text-monospace player-one"></p>
@@ -53,7 +47,7 @@
         <button class="btn btn-success restart">Restart</button>
       </div>
       <p class="current-player text-white text-center mt-3 text-monospace"></p>
-      <div class="board m-5 mt-3 shadow-lg">
+      <div class="board m-5 mt-3">
         <button class="bg-white tag-btn" data-id="0"></button>
         <button class="bg-white tag-btn" data-id="1"></button>
         <button class="bg-white tag-btn" data-id="2"></button>
